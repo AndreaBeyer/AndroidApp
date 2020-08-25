@@ -19,6 +19,7 @@
         android:id="@+id/myListView"
         android:layout_centerHorizontal="true"
         android:layout_below="@id/addPerson"
+        android:longClickable="true"
         />
 
 

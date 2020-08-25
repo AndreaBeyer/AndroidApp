@@ -5,7 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -25,5 +31,24 @@ public class MainActivity extends AppCompatActivity {
         mesContacts.add(new Personne("Bulbizarre", "001", this.getDrawable(R.drawable.bulbizarre)));
 
         maListe.setAdapter(new PersonneArrayAdapter(this, mesContacts));
+        registerForContextMenu(maListe);
     }
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo){
+        super.onCreateContextMenu(menu, v , menuInfo);
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.pers_lv_context_menu, menu);
+    }
+
+    /*@Override
+    public boolean onContextItemSlelected(MenuItem item){
+        AdapterView.AdapterContextMenuInfo menuInfo = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
+
+        switch(item.getItemId()){
+            case R.id.copie:
+                Toast.makeText()
+        }
+    }*/
+
+
 }

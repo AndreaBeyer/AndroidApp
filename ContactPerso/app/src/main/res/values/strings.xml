@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">PokéContacts</string>
-    <string name="Ajouter" />
+    <string name="copie">Copier</string>
+    <string name="delete">Supprimer</string>
 </resources>
