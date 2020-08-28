@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ab.android.Mes_Contacts">
 
+    <uses-permission android:name="Android.permission.MANAGE_DOCUMENTS"/>
+    <uses-permission android:name="Android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="Android.permission.READ_EXTERNAL_STORAGE" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"

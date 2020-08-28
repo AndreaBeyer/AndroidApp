@@ -1,6 +1,7 @@
 package ab.android.Mes_Contacts;
 
 import android.content.Context;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +12,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLDecoder;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 
 public class PersonneArrayAdapter extends ArrayAdapter<Personne> {
 
@@ -20,6 +27,10 @@ public class PersonneArrayAdapter extends ArrayAdapter<Personne> {
     public PersonneArrayAdapter(@NonNull Context context, ArrayList<Personne> listPersonnes) {
         super(context, R.layout.tiemperso, listPersonnes);
         this.listPersonnes = listPersonnes;
+    }
+
+    public int getSize(){
+        return this.listPersonnes.size();
     }
 
     @NonNull
@@ -47,11 +58,12 @@ public class PersonneArrayAdapter extends ArrayAdapter<Personne> {
                 prenomView.setText("Numero : " + myPersonne.getNumero());
             }
 
-            if(numView != null){
-                numView.setImageDrawable(myPersonne.getPhoto());
+            if(numView != null )
+            {
+                numView.setImageURI(Uri.parse(myPersonne.getPhoto()));
             }
-        }
 
+        }
         return v;
     }
 }

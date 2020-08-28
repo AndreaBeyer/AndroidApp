@@ -7,7 +7,8 @@
         android:id="@+id/imageView"
         android:layout_width="186dp"
         android:layout_height="233dp"
-        app:srcCompat="@drawable/pika" />
+        android:onClick="onClickImage"
+        app:srcCompat="@drawable/defaut" />
 
     <EditText
         android:id="@+id/labelForName"
@@ -41,6 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/labelForNumber"
+        android:inputType="number"
         />
 
     <Button
